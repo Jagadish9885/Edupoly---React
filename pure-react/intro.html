@@ -17,6 +17,8 @@
     <div id="d5"></div>
     <div id="d6"></div>
     <div id="d7"></div>
+
+    <div id="d8"></div>
     <script type="text/babel">
         var x = document.createElement("h1")
         x.innerHTML = "Hello React";
@@ -61,10 +63,33 @@
             // var z2 = <h1>{b+c}</h1>
             // ReactDOM.render(z2, document.getElementById("d7"));
 
-             var b = +prompt("Enter a number:");
+            //  var b = +prompt("Enter a number:");
               
-            var z2 = <h1>{b%2 == 0?"even" : "odd"}</h1>
-            ReactDOM.render(z2, document.getElementById("d7"));
+            // var z2 = <h1>{b%2 == 0?"even" : "odd"}</h1>
+            // ReactDOM.render(z2, document.getElementById("d7"));
+
+            var obj =  {
+            "_id": 1,
+            "name": "Alice",
+            "email": "alice@example.com",
+            "age": 30,
+            "address": {
+            "street": "123 Maple St",
+            "city": "Springfield"
+            }
+            }
+
+            var ob1 = <div>
+                {
+                   `id:${obj._id} Name:${obj.name}
+
+                   street:${obj.address.street}` 
+
+                    
+                }
+                </div>
+
+            ReactDOM.render(ob1, document.getElementById("d8"))
 
 
 
