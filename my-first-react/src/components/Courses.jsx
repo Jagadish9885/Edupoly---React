@@ -6,7 +6,7 @@ function Courses(p) {
     style={{height:"300px",width:"300px"}}
     >
       <h3 className='border-start border-2 border-info p-2'>{p.children}</h3>
-      
+      <p>This course is for both Fresher's and Experienced.</p>
       <p>
         <b className='border-bottom border-2 border-success'>Trainer: {p.trainer}</b>
       </p>
