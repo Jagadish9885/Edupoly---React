@@ -13,6 +13,7 @@
     <div id="d1"></div>
     <div id="d2"></div>
     <div id="d3"></div>
+    <div id="d4"></div>
     <script type="text/babel">
         var x = document.createElement("h1")
         x.innerHTML = "Hello React";
@@ -29,6 +30,18 @@
 
         var z = <h1 style={{color:"blue"}} onClick={abc}>Hello React using JSX</h1>;
         ReactDOM.render(z, document.getElementById("d3"));
+
+
+        var ar = [10,20,30,40,50];
+        var z = <ul>
+            {ar.map((i)=>{
+                return <li>{i}</li>
+            })}
+            </ul>
+            console.log(ar)
+            ReactDOM.render(z, document.getElementById("d4"));
+
+
     </script>
 </body>
 </html>
