@@ -14,6 +14,9 @@
     <div id="d2"></div>
     <div id="d3"></div>
     <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
     <script type="text/babel">
         var x = document.createElement("h1")
         x.innerHTML = "Hello React";
@@ -40,6 +43,32 @@
             </ul>
             console.log(ar)
             ReactDOM.render(z, document.getElementById("d4"));
+
+            var a = "Jagadish";
+            var z1 = <h1>{a}</h1>
+            ReactDOM.render(z1, document.getElementById("d5"));
+
+             var a1 = "Jagadish";
+            var z11 = <h1>{a1.toUpperCase()}</h1>
+            ReactDOM.render(z11, document.getElementById("d6"));
+
+            // var b = 123;
+            // var z2 = <h1>{b*b}</h1>
+            // ReactDOM.render(z2, document.getElementById("d7"));
+
+            //   var b = +prompt("Enter a number:");
+            //   var c = +prompt("Enter another number:");
+            // var z2 = <h1>{b+c}</h1>
+            // ReactDOM.render(z2, document.getElementById("d7"));
+
+             var b = +prompt("Enter a number:");
+              
+            var z2 = <h1>{b%2 == 0?"even" : "odd"}</h1>
+            ReactDOM.render(z2, document.getElementById("d7"));
+
+
+
+
 
 
     </script>
