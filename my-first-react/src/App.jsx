@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import Courses from './components/Courses'
+import NavBar from './components/NavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="border border-2 border-success p-2">
+      <NavBar></NavBar>
+      <div className="border border-2 d-flex flex-wrap m-2 p-2">
+      <Courses price="20000" trainer="hari" hours="30">React</Courses>
+      <Courses price="10000" trainer="anil" hours="20">Angular</Courses>
+      <Courses price="30000" trainer="madhav" hours="40">NodeJs</Courses>
+      <Courses price="15000" trainer="hari" hours="35">ExpressJs</Courses>
+      <Courses price="20000" trainer="jagadish" hours="25">MERN</Courses>
+      <Courses price="25000" trainer="sethu" hours="30">MEAN</Courses>
+      <Courses price="28500" trainer="sai" hours="15">ReactJs FullStack with GenAI</Courses>
+      <Courses price="32000" trainer="ram" hours="18">AngularJs FullStack with GenAI</Courses>
+      <Courses price="18500" trainer="anjan" hours="38">Gen AI</Courses>
+      <Courses price="16000" trainer="shiva" hours="30">Java</Courses>
+      <Courses price="17500" trainer="mani" hours="22">AWS</Courses>
+      <Courses price="22000" trainer="deep" hours="28">Dev Ops</Courses>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
