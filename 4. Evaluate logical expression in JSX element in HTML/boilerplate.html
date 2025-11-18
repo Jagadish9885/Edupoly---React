@@ -13,11 +13,17 @@
     <div id="d1"></div>
     <script type="text/babel">
 
-        var jsx = <h1>{}</h1>
-        
+        // var isLoggedIn = true;
+        // // var isLoggedIn = false;
 
-        ReactDOM.render(jsx, document.getElementById("d1"))
+        // var jsx = <h1>{isLoggedIn && <p>Welcome back Mr. Jagadish</p>}</h1>
 
+        var userName = "jagadish"
+        var inputName = prompt();
+
+        var jh = <h1>{(userName == inputName) && `Welcome Back Mr.${userName}` || <h1>welcome guest</h1>}</h1>
+
+        ReactDOM.render(jh, document.getElementById("d1"))
     </script>
 </body>
 </html>
