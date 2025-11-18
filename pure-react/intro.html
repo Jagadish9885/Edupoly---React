@@ -7,6 +7,27 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="../heroes.js"></script>
+    <!-- <style>
+        #d10 ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 20px;   
+        }
+        #d10 ul li{
+            border: 2px solid;
+            padding: 10px;
+            border-radius: 5%;
+            font-family: sans-serif;
+            width: 200px;
+            
+        }
+        #d10 ul li h2{
+            background-color: bisque;
+            padding: 10px;
+        }
+    </style> -->
 </head>
 <body>
     <h1>Introduction to React</h1>
@@ -19,6 +40,8 @@
     <div id="d7"></div>
 
     <div id="d8"></div>
+    <div id="d9"></div>
+    <div id="d10"></div>
     <script type="text/babel">
         var x = document.createElement("h1")
         x.innerHTML = "Hello React";
@@ -90,6 +113,74 @@
                 </div>
 
             ReactDOM.render(ob1, document.getElementById("d8"))
+
+
+            // var hereos = ["Ram", "shiva", "krishna", "vishnu", "brahma"]
+
+            //     var hl = <ul>
+            //         {
+            //             hereos.map(function(h){
+            //                 return <li>{h}</li>
+            //             })
+            //         }
+            //         </ul>
+
+            //         ReactDOM.render(hl, document.getElementById("d9"))
+
+                console.log(heroes)
+
+                var tb;
+                function genTable(){
+                     tb = <table border='2' cellPadding='20px'>
+                    <thead>
+                        <th onClick={()=>{sortBy('id')}}>ID</th>
+                        <th onClick={()=>(sortBy('firstname'))}>Name</th>
+                        <th onClick={()=>(sortBy('bestpair'))}>Best Pair</th>
+                    </thead>
+                    <tbody>
+                        {
+                        heroes.map(function(t){
+                            return <tr>
+                                <td>{t.id}</td>
+                                <td>{t.firstname}</td>
+                                <td>{t.bestpair}</td>
+                                </tr>
+                        })
+                    }
+                     </tbody>
+                </table>
+                ReactDOM.render(tb, document.getElementById("d10"))
+                } 
+                genTable();
+                function sortBy(k){
+                    alert("hi")
+                    heroes.sort((a,b)=>{
+                        if(a[k]>b[k]){
+                            return 1
+                        }else{
+                            return -1
+                        }
+                    })
+                    genTable();
+                    ReactDOM.render(tb, document.getElementById("d10"))
+                }
+                console.log(heroes)
+                
+
+                // --------------- ul li
+            // var tb = <ul>
+            //         {
+            //             heroes.map((h)=>{
+            //                 return <li>
+            //                     <h2>{h.id}</h2>
+            //                     <b>{h.firstname}</b>
+            //                     <h3>{h.bestpair}</h3>
+            //                     </li>
+            //             })
+            //         }
+            //     </ul>
+
+            //     ReactDOM.render(tb, document.getElementById("d10"))
 
 
 
