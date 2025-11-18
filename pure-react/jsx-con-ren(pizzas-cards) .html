@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="../pizzas.js"></script>
+    <style>
+        body{
+            background-color: rgb(219, 220, 222);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .vegPizza{
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+        .nonVegPizza{
+            background-color: red;
+            color: white;
+            font-style: italic;
+        }
+        #d1 ul{
+            padding: 0%;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        #d1 ul li{
+            width: 250px;
+            background-color: whitesmoke;
+        
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        #d1 ul li h3{
+            text-align: center;
+            background-color: rgb(158, 159, 159);
+            padding: 10px;
+            margin: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="d1"></div>
+
+    <script type="text/babel">
+        console.log(details)
+        var {menu : {pizzas}} = details;
+        // console.log(menu)
+        // console.log(pizzas)
+
+        var pizzacards = <ul>
+                {
+                    pizzas.map((p)=>{
+                        return <li>
+                            <h3>{p.name}</h3>
+                            <p>{p.description}</p>
+                            <p>Rs.{p.prices.Medium}</p>
+                            <p>{p.type}</p>
+                            </li>
+                    })
+                }
+            </ul>
+
+            ReactDOM.render(pizzacards, document.getElementById("d1"))
+    </script>
+</body>
+</html>
+

@@ -8,14 +8,14 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="../heroes.js"></script>
-    <!-- <style>
-        #d10 ul{
+    <style>
+        #d11 ul{
             display: flex;
             flex-wrap: wrap;
             list-style: none;
             gap: 20px;   
         }
-        #d10 ul li{
+        #d11 ul li{
             border: 2px solid;
             padding: 10px;
             border-radius: 5%;
@@ -23,11 +23,11 @@
             width: 200px;
             
         }
-        #d10 ul li h2{
+        #d11 ul li h2{
             background-color: bisque;
             padding: 10px;
         }
-    </style> -->
+    </style>
 </head>
 <body>
     <h1>Introduction to React</h1>
@@ -42,6 +42,8 @@
     <div id="d8"></div>
     <div id="d9"></div>
     <div id="d10"></div>
+        <div id="d11"></div>
+
     <script type="text/babel">
         var x = document.createElement("h1")
         x.innerHTML = "Hello React";
@@ -168,19 +170,19 @@
                 
 
                 // --------------- ul li
-            // var tb = <ul>
-            //         {
-            //             heroes.map((h)=>{
-            //                 return <li>
-            //                     <h2>{h.id}</h2>
-            //                     <b>{h.firstname}</b>
-            //                     <h3>{h.bestpair}</h3>
-            //                     </li>
-            //             })
-            //         }
-            //     </ul>
+            var tb = <ul>
+                    {
+                        heroes.map((h)=>{
+                            return <li>
+                                <h2>{h.id}</h2>
+                                <b>{h.firstname}</b>
+                                <h3>{h.bestpair}</h3>
+                                </li>
+                        })
+                    }
+                </ul>
 
-            //     ReactDOM.render(tb, document.getElementById("d10"))
+                ReactDOM.render(tb, document.getElementById("d11"))
 
 
 

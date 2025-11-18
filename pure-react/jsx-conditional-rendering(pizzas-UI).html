@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="../pizzas.js"></script>
+    <style>
+        .vegPizza{
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+        .nonVegPizza{
+            background-color: red;
+            color: white;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="d1"></div>
+
+    <script type="text/babel">
+        console.log(details)
+        var {menu : {pizzas}} = details;
+        // console.log(menu)
+        // console.log(pizzas)
+
+        var pt = <table border="2">
+                <tbody>
+                     {
+                pizzas.map((p)=>{
+                    return <tr class={p.type==="Veg"?"vegPizza":"nonVegPizza"}>
+                        <td>{p.id}</td>
+                        <td>{p.name}</td>
+                        <td>{p.type}</td>
+                        <td>{p.description}</td>
+                        <td>{JSON.stringify(p.prices)}</td>
+                        </tr>
+                })
+            }
+                </tbody>
+            </table>
+
+            ReactDOM.render(pt, document.getElementById("d1"))
+    </script>
+</body>
+</html>
+
